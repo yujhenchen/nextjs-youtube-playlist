@@ -1,4 +1,6 @@
-import AppButton from "./AppButton";
+import Nav from "@/components/Nav";
+import AppButton from "../components/AppButton";
+import Footer from "@/components/Footer";
 // import styles from "./page.module.css";
 
 export default function Home() {
