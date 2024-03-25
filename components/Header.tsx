@@ -9,8 +9,8 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
 import AppLink from './AppLink';
+import AppLogo from './AppLogo';
 
 const navItems = [
   { id: 'bands', href: '/bands', text: 'Bands' },
@@ -33,8 +33,12 @@ export default function Header() {
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          {/* <AppLink href='/'>LOGO</AppLink> */}
+          <AppLogo
+            href={'/'}
+            logo={'Logo'}
+            iconStyles={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            logoStyles={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -68,12 +72,7 @@ export default function Header() {
             >
               {navItems.map(({ id, href, text }) => (
                 <MenuItem key={id} onClick={handleCloseNavMenu}>
-                  <AppLink
-                    key={id}
-                    href={href}
-                    prefetch={true}
-                    onClick={handleCloseNavMenu}
-                  >
+                  <AppLink key={id} href={href} prefetch={true}>
                     {text}
                   </AppLink>
                 </MenuItem>
@@ -81,8 +80,12 @@ export default function Header() {
             </Menu>
           </Box>
 
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          {/* <AppLink href='/'>LOGO</AppLink> */}
+          <AppLogo
+            href={'/'}
+            logo={'Logo'}
+            iconStyles={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+            logoStyles={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
+          />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {navItems.map(({ id, href, text }) => (
