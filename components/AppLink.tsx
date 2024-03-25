@@ -9,7 +9,7 @@ type AppLinkProps = {
 } & LinkProps &
   HTMLProps<HTMLAnchorElement>;
 
-const defaultAppearance = {
+const defaultLinkStyles = {
   margin: '0 2px',
   color: 'gray',
   display: 'block',
@@ -20,7 +20,7 @@ export default function AppLink({
   href,
   children,
   handleClick,
-  appearance = defaultAppearance,
+  appearance = defaultLinkStyles,
   ...rest
 }: AppLinkProps) {
   return (
