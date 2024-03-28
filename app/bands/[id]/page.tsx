@@ -1,26 +1,25 @@
 import React from 'react';
-import Image from 'next/image';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-const imageStyle: React.CSSProperties = {
-  objectFit: 'cover',
-  maxWidth: '100%',
-  height: 'auto'
-};
+import AppImage from '@/components/AppImage';
 
 export default function BandPage() {
   return (
     <Container>
-      <Box sx={{ display: 'flex', width: '100%' }}>
-        <Image
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          width: '100%'
+        }}
+      >
+        <AppImage
           width={500}
           height={500}
-          src={''}
-          alt={''}
+          src={'600x400'}
+          alt={'600x400'}
           loading='lazy'
-          style={imageStyle}
         />
         <Box>
           <Typography variant='h1' component='h2'>

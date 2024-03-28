@@ -2,7 +2,7 @@
 
 import { ImageLoaderProps } from 'next/image';
 
-const API_URL = 'https://images.unsplash.com';
+const API_URL = 'https://placehold.co';
 
 export default function myImageLoader({
   src,
