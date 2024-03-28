@@ -3,6 +3,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import AppImage from '@/components/AppImage';
+import Container from '@mui/material/Container';
 
 const itemData = [
   {
@@ -24,30 +25,32 @@ const itemData = [
 
 export default function BandsPage() {
   return (
-    <ImageList
-      sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
-        width: '100%',
-        height: '100%'
-      }}
-    >
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <AppImage
-            width={500}
-            height={500}
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            alt={item.title}
-            loading='lazy'
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={<span>by: {item.author}</span>}
-            position='below'
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <Container>
+      <ImageList
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          width: '100%',
+          height: '100%'
+        }}
+      >
+        {itemData.map((item) => (
+          <ImageListItem key={item.img}>
+            <AppImage
+              width={500}
+              height={500}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading='lazy'
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle={<span>by: {item.author}</span>}
+              position='below'
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </Container>
   );
 }
